@@ -129,8 +129,13 @@ header.scrolled{box-shadow:0 6px 22px -16px rgba(0,0,0,.4)}
 .svc p{font-size:.88rem;color:var(--muted);line-height:1.5}
 
 /* ===== BEFORE/AFTER ===== */
-.ba-wrap{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
-.ba-video{width:100%;height:auto;display:block;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#14161a}
+.ba-wrap{display:grid;grid-template-columns:1fr;gap:34px}
+.ba-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.ba-video{width:100%;height:auto;display:block;background:#14161a}
+.ba-meta{padding:24px 26px 26px}
+.ba-meta .eyebrow{margin-bottom:10px}
+.ba-meta h3{font-size:clamp(1.2rem,2.4vw,1.45rem);font-weight:800;margin-bottom:8px}
+.ba-meta p{color:var(--slate);font-size:1.01rem;max-width:66ch}
 .ba{position:relative;width:100%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;
   box-shadow:var(--shadow);user-select:none;touch-action:pan-y;cursor:ew-resize}
 .ba-img{position:absolute;inset:0;background-size:cover;background-position:center}
@@ -427,9 +432,26 @@ footer{background:var(--ink);color:rgba(255,255,255,.66);padding:64px 0 26px}
       <p>Watch the transformation — the difference quality construction makes.</p>
     </div>
     <div class="ba-wrap reveal">
-      <video class="ba-video autoplay-vid" muted loop playsinline preload="metadata" data-poster="before">
-        <source src="before-after-01.mp4" type="video/mp4">
-      </video>
+      <article class="ba-item">
+        <video class="ba-video autoplay-vid" muted loop playsinline preload="metadata" poster="poster-ba-01.jpg">
+          <source src="before-after-01.mp4" type="video/mp4">
+        </video>
+        <div class="ba-meta">
+          <span class="eyebrow"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>New build · Derbyshire</span>
+          <h3>Detached Country New Build</h3>
+          <p>Built from the foundations up on a countryside plot — a substantial detached family home in traditional stone and brick beneath a natural slate roof, finished with landscaped grounds and a sweeping gravel driveway.</p>
+        </div>
+      </article>
+      <article class="ba-item">
+        <video class="ba-video autoplay-vid" muted loop playsinline preload="metadata" poster="poster-ba-02.jpg">
+          <source src="before-after-02.mp4" type="video/mp4">
+        </video>
+        <div class="ba-meta">
+          <span class="eyebrow"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Conversion &amp; extension · Derbyshire</span>
+          <h3>Stone Barn Conversion &amp; Extension</h3>
+          <p>A redundant stone barn reimagined as a contemporary home — full structural renovation, a single-storey garden extension with frameless sliding glazing, and beautifully landscaped patio gardens.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -443,12 +465,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.66);padding:64px 0 26px}
       <p>Proudly built across Derbyshire and the surrounding areas.</p>
     </div>
     <div class="gal reveal">
+      <div class="gtile" data-fullsrc="gallery-01.jpg"><div class="gimg" style="background-image:url('gallery-01.jpg')"></div><div class="gover"><span>Red brick new build</span></div></div>
+      <div class="gtile" data-fullsrc="gallery-04.jpg"><div class="gimg" style="background-image:url('gallery-04.jpg')"></div><div class="gover"><span>Contemporary stone extension</span></div></div>
+      <div class="gtile" data-fullsrc="gallery-03.jpg"><div class="gimg" style="background-image:url('gallery-03.jpg')"></div><div class="gover"><span>Feature gable glazing</span></div></div>
+      <div class="gtile" data-fullsrc="gallery-02.jpg"><div class="gimg" style="background-image:url('gallery-02.jpg')"></div><div class="gover"><span>Stone garden room</span></div></div>
+      <div class="gtile" data-fullsrc="gallery-05.jpg"><div class="gimg" style="background-image:url('gallery-05.jpg')"></div><div class="gover"><span>Two-storey extension &amp; dormers</span></div></div>
       <div class="gtile" data-full="hero"><div class="gimg" data-bg="hero"></div><div class="gover"><span>New build · Derbyshire</span></div></div>
-      <div class="gtile" data-full="hero2"><div class="gimg" data-bg="hero2"></div><div class="gover"><span>Landscaped garden &amp; patio</span></div></div>
-      <div class="gtile ph"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Project photo</small></div>
-      <div class="gtile ph"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Project photo</small></div>
-      <div class="gtile ph"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Project photo</small></div>
-      <div class="gtile ph"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Project photo</small></div>
     </div>
   </div>
 </section>
@@ -649,9 +671,12 @@ navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger
   const vids=document.querySelectorAll('video.autoplay-vid');
   if(!vids.length) return;
   const tryPlay=v=>{const p=v.play(); if(p&&p.catch)p.catch(()=>{});};
+  // retry once data is ready — a preload="metadata" video can reject the first play() call
+  vids.forEach(v=>v.addEventListener('canplay',()=>{if(v.dataset.inview==='1')tryPlay(v);}));
   if('IntersectionObserver' in window){
     const io=new IntersectionObserver(es=>es.forEach(en=>{
-      if(en.isIntersecting) tryPlay(en.target); else en.target.pause();
+      const v=en.target;
+      if(en.isIntersecting){v.dataset.inview='1';tryPlay(v);} else {v.dataset.inview='0';v.pause();}
     }),{threshold:.25});
     vids.forEach(v=>io.observe(v));
   } else {
@@ -664,8 +689,8 @@ navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger
 /* ===== GALLERY LIGHTBOX ===== */
 (function(){
   const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), close=document.getElementById('lbClose');
-  document.querySelectorAll('.gtile[data-full]').forEach(t=>{
-    t.addEventListener('click',()=>{const k=t.getAttribute('data-full'); if(IMAGES[k]){lbImg.src=IMAGES[k]; lb.classList.add('open');}});
+  document.querySelectorAll('.gtile[data-full],.gtile[data-fullsrc]').forEach(t=>{
+    t.addEventListener('click',()=>{const src=t.getAttribute('data-fullsrc')||IMAGES[t.getAttribute('data-full')]; if(src){lbImg.src=src; lb.classList.add('open');}});
   });
   const hide=()=>lb.classList.remove('open');
   close.addEventListener('click',hide);
