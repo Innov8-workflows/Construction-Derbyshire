@@ -45,10 +45,9 @@ body{
 /* HEADER */
 .card-head{ position:relative; padding:48px 28px 30px; text-align:center; color:#fff; overflow:hidden; background:var(--charcoal-deep); }
 .head-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-.head-overlay{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(20,22,26,.34) 0%, rgba(20,22,26,.52) 50%, rgba(20,22,26,.8) 80%, rgba(20,22,26,.95) 100%); }
-.logo-badge{ position:relative; z-index:2; display:inline-flex; padding:12px 14px; margin:0 auto 16px; background:#fff; border-radius:16px;
-  box-shadow:0 10px 24px rgba(0,0,0,.28); }
-.logo-badge img{ height:78px; width:auto; object-fit:contain; display:block; }
+.head-overlay{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(20,22,26,.5) 0%, rgba(20,22,26,.6) 50%, rgba(20,22,26,.82) 80%, rgba(20,22,26,.95) 100%); }
+.head-logo{ position:relative; z-index:2; display:block; width:min(230px,56%); height:auto; margin:0 auto 14px;
+  filter:drop-shadow(0 10px 26px rgba(0,0,0,.55)); }
 .head-tag{ position:relative; z-index:2; font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-soft);
   font-family:'Inter',sans-serif; text-shadow:0 1px 12px rgba(0,0,0,.5); }
 
@@ -115,7 +114,7 @@ h1{ font-family:'Archivo',sans-serif; font-weight:800; font-size:2.1rem; line-he
         <source src="hero-video-01.mp4" type="video/mp4">
       </video>
       <div class="head-overlay" aria-hidden="true"></div>
-      <div class="logo-badge"><img src="logo.png" alt="Construction Derbyshire logo"></div>
+      <img class="head-logo" src="logo-light.png" alt="Construction Derbyshire">
       <p class="head-tag">New Builds · Extensions · Renovations</p>
     </header>
 
