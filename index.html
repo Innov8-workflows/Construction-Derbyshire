@@ -80,7 +80,7 @@ header.scrolled{box-shadow:0 6px 22px -16px rgba(0,0,0,.4)}
 .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 
 /* ===== HERO ===== */
-.hero{position:relative;height:100vh;min-height:600px;max-height:880px;overflow:hidden;display:flex;align-items:center}
+.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:center;padding:104px 0 64px}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:#23262B}
 .hero-slides{position:absolute;inset:0;z-index:0}
 .hslide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;
@@ -88,15 +88,16 @@ header.scrolled{box-shadow:0 6px 22px -16px rgba(0,0,0,.4)}
 .hslide.active{opacity:1}
 @keyframes kb{0%{transform:scale(1.04)}100%{transform:scale(1.13)}}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(20,22,26,.82) 0%,rgba(20,22,26,.6) 42%,rgba(20,22,26,.28) 100%)}
-.hero-inner{position:relative;z-index:2;color:#fff;max-width:680px}
+  background:linear-gradient(180deg,rgba(20,22,26,.62) 0%,rgba(20,22,26,.46) 45%,rgba(20,22,26,.8) 100%)}
+.hero-inner{position:relative;z-index:2;color:#fff;max-width:760px;margin:0 auto;text-align:center}
+.hero-logo{display:block;width:clamp(210px,30vw,360px);height:auto;margin:0 auto 12px;filter:drop-shadow(0 12px 32px rgba(0,0,0,.55))}
 .hero-inner .eyebrow{color:var(--gold-br)}
 .hero-inner .eyebrow svg{color:var(--gold-br)}
 .hero h1{color:#fff;font-size:clamp(2.3rem,5.4vw,4rem);font-weight:800;letter-spacing:-.02em}
 .hero h1 em{font-style:normal;color:var(--gold-br)}
-.hero p{color:rgba(255,255,255,.9);font-size:1.16rem;margin:20px 0 32px;max-width:540px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero-pips{display:flex;gap:24px;margin-top:36px;flex-wrap:wrap}
+.hero p{color:rgba(255,255,255,.9);font-size:1.16rem;margin:20px auto 32px;max-width:560px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero-pips{display:flex;gap:24px;margin-top:36px;flex-wrap:wrap;justify-content:center}
 .hero-pips div{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.92);font-weight:600;font-size:.92rem}
 .hero-pips svg{width:18px;height:18px;color:var(--gold-br);flex:none}
 .hero-dots{position:absolute;z-index:3;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:9px}
@@ -357,7 +358,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.66);padding:64px 0 26px}
   <video class="hero-video autoplay-vid" id="heroVideo" autoplay muted loop playsinline preload="auto" data-poster="hero"
          src="hero-video-01.mp4"></video>
   <div class="wrap hero-inner">
-    <span class="eyebrow"><svg viewBox="0 0 28 14" fill="none"><path d="M2 13 14 2l12 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Derbyshire's trusted builders</span>
+    <img class="hero-logo" data-img="logoLight" alt="Construction Derbyshire">
     <h1>Built to last.<br><em>Finished to perfection.</em></h1>
     <p>New builds, extensions and renovations across Derbyshire — quality craftsmanship and stonework you can rely on, from foundations to the final finish.</p>
     <div class="hero-cta">
